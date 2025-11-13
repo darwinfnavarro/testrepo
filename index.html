@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Panel Power BI</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .iframe-wrapper {
+            width: 100%;
+            height: 1200px;              /* altura estable como Laravel */
+            border-radius: 12px;
+            overflow: auto;               /* scroll interno */
+            -webkit-overflow-scrolling: touch; /* esencial para iPhone */
+            background: #fff;
+        }
+
+        iframe {
+            width: 100%;
+            height: 2000px;               /* más alto que el wrapper = scroll */
+            border: none;
+        }
+
+        @media (max-width: 480px){
+            .iframe-wrapper {
+                height: 1400px;           /* más alto para iPhone chico */
+            }
+            iframe {
+                height: 2400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h2>Vendedores Todoferretero</h2>
+
+            <div class="iframe-wrapper">
+                <iframe
+                    src="https://app.powerbi.com/reportEmbed?reportId=3b5eb578-f3a6-4f8c-8421-788a6fdea8e5&autoAuth=true&ctid=25ec924b-087c-4f79-9d7f-6233d64f16b6"
+                    allowfullscreen="true">
+                </iframe>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
